@@ -18,9 +18,9 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name',
         'username',
         'password',
+        'role',
     ];
 
     /**
@@ -41,4 +41,31 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function Siswas()
+    {
+        return $this->hasOne('App\Models\Siswa', 'id_user');
+    }
+
+    public function Gurus()
+    {
+        return $this->hasOne('App\Models\Guru', 'id_user');
+    }
+
+    public function Admins()
+    {
+        return $this->hasOne('App\Models\Admin', 'id_user');
+    }
+
+    // this is a recommended way to declare event handlers
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($user) { // before delete() method call this
+            $user->Siswas()->delete();  
+            $user->Gurus()->delete();  
+            $user->Admins()->delete();
+        });
+    }
 }
