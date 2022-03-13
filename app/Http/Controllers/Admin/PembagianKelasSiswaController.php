@@ -69,6 +69,8 @@ class PembagianKelasSiswaController extends ControllerAdmin
      */
     public function show($id, PembagianKelasSiswaDataTable $dataTable)
     {
+        $id_kelas = session()->get('id_kelas');
+
         try {
             $id = Crypt::decrypt($id);
         } catch (DecryptException $e) {
@@ -82,10 +84,11 @@ class PembagianKelasSiswaController extends ControllerAdmin
         return $dataTable->with('id', $id)->with('id_jurusan', $id_jurusan)->render(
             'dashboard.admin.kelas.kelas.pembagian_kelas_siswa',
             [
-                'id' => $id,
-                'banyakSiswa' => $banyakPembagianKelasSiswa,
-                'kelas' => $pembagianKelas->kelas->kelas,
-                'jurusan' => $pembagianKelas->kelas->jurusan
+                'id'                => $id_kelas,
+                'banyakSiswa'       => $banyakPembagianKelasSiswa,
+                'idPembagianKelas'  => $pembagianKelas->id,
+                'kelas'             => $pembagianKelas->kelas->kelas,
+                'jurusan'           => $pembagianKelas->kelas->jurusan
             ]
         );
     }

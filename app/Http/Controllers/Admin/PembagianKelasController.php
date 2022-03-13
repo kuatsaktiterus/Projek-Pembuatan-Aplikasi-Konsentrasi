@@ -23,10 +23,9 @@ class PembagianKelasController extends ControllerAdmin
      */
     public function index($id, PembagianKelasDataTable $dataTable)
     {
-        session()->put('id_kelas', $id);
-
         try {
             $id = Crypt::decrypt($id);
+            session()->put('id_kelas', $id);
         } catch (DecryptException $e) {
             return redirect()->back()->withWarningMessage('Maaf terjadi kesalahan');
         }

@@ -300,7 +300,7 @@
                     </div>
                     <div class="media-body pl-2">
                         <h3 class="mt-0 mb-0"><strong>{{$jumlahKelas}}</strong></h3>
-                        <p><small class="text-muted bc-description">Jumlah Kelas Di Jurusan {{$siswa->jurusan->jurusan}} {{$siswa->pembagiankelassiswa[0]->pembagiankelas->kelas->kelas}} <!-- data kelas --></small></p>
+                        <p><small class="text-muted bc-description">Jumlah Kelas Di Jurusan {{$user->jurusan->jurusan}} {{$user->pembagiankelassiswa[0]->pembagiankelas->kelas->kelas}} <!-- data kelas --></small></p>
                     </div>
                 </div>
             </div>

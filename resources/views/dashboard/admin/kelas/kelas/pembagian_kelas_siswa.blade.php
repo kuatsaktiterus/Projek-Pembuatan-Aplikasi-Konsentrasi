@@ -13,7 +13,8 @@
     </nav>
 
     <div class="mt-1 mb-3 button-container">
-        <a class="btn btn-primary" href="{{ route("pembagian-kelas-siswa.edit", ['pembagian_kelas_siswa' => Crypt::encrypt($id)]) }}" style="color:white !important;">Isi kelas</a>
+        <a class="btn btn-primary" href="{{ route("pembagian-kelas-siswa.edit", ['pembagian_kelas_siswa' => Crypt::encrypt($idPembagianKelas)]) }}" style="color:white !important;">
+            Isi kelas</a>
         <a class="btn btn btn-primary" href="/jadwal-kelas/{{Crypt::encrypt($id)}}"
             onclick="event.preventDefault();
             document.getElementById('jadwalkelas-form').submit();"

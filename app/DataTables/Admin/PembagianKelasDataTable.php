@@ -23,7 +23,7 @@ class PembagianKelasDataTable extends DataTable
         return datatables()
             ->eloquent($query)
             ->addColumn('action', function ($data) {
-                $action =   '<form action="/app/pembagian-kelas-siswa/' . Crypt::encrypt($data->id) . '"  method="get">
+                $action =   '<form action="/app/pembagian-kelas-siswa/' . Crypt::encrypt($data->id)  . '"  method="get">
                                 <button type="button" class="waves-effect btn btn-sm btn-danger" onclick="actionpembagiankelas(\'' . 'hapus' . '\',\'' . Crypt::encrypt($data->id) . '\')">
                                     <i class="fas fa-trash" color=white></i>
                                 </button>
