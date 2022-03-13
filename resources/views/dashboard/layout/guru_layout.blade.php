@@ -41,6 +41,12 @@
                 <span class="none"> Siswa </span>
             </a>
         </li>
+
+        <li class="parent">
+            <a href="{{ route('pengumuman.guru.index') }}"class=""><i class="far fa-flag mr-3"></i>
+                <span class="none"> Pengumuman </span>
+            </a>
+        </li>
     </ul>
 </div>
 @endsection

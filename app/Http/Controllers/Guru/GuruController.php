@@ -8,7 +8,6 @@ use App\DataTables\Guru\JadwalKelasDataTable;
 use App\DataTables\Guru\PengumumanGuruDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Guru;
-use App\Models\PengumumanAdmin;
 use App\Models\PengumumanGuru;
 use App\Models\User;
 use App\Rules\MatchOldPassword;
